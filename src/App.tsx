@@ -1,7 +1,16 @@
 import React from 'react';
+import {
+  Redirect,
+  Route,
+  Switch,
+  withRouter
+} from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 
 const App = () => (
-  <div>abcd</div>
+  <Switch>
+    <Route component={LandingPage} exact path="/" />
+  </Switch>
 );
 
-export default App;
+export default withRouter(App);
