@@ -7,11 +7,13 @@ import {
 } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import CreatingEventPage from './pages/CreatingEventPage'
+import EventPage from './pages/EventPage';
 
 const App = () => (
   <Switch>
     <Route component={LandingPage} exact path="/" />
-    <Route sensitive component={CreatingEventPage} exact path="/create" />
+    <Route component={CreatingEventPage} exact path="/create" />
+    <Route component={EventPage} exact path="/event" />
   </Switch>
 );
 

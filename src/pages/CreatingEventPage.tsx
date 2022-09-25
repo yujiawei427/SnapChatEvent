@@ -12,8 +12,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 
-const locationValue = ['Street Name', 'Suburb', 'Postage', 'State'];
-
 const CreatingEventPage: React.FunctionComponent = () => {
   const [startDate, setStartDate] = useState<Dayjs | null>(
     dayjs(new Date()),
