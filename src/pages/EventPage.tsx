@@ -6,8 +6,11 @@ import './EventPage/EventPage.less';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import dayjs, { Dayjs } from 'dayjs';
 
 const EventPage: React.FunctionComponent = () => {
+  const eventparams = useLocation();
+  const {hostName, eventName, location, startDate, endDate} = eventparams.state;
 
   return (
     <div className="event-container">
@@ -15,9 +18,9 @@ const EventPage: React.FunctionComponent = () => {
         <img src={birthdayCake} className="upload-img" />
       </div>
       <div className="event-header-box">
-        <p>Birthday Bash</p>
+        <p>{eventName}</p>
         <div className="event-sub-header">
-          <p>hosted by <span className="host-name">Vin</span></p>
+          <p>hosted by <span className="host-name">{hostName}</span></p>
         </div>
       </div>
       <div className="detail-box">
@@ -25,8 +28,8 @@ const EventPage: React.FunctionComponent = () => {
           <CalendarMonthIcon />
         </div>
         <div className="event-detail-box">
-          <p className="event-detail">18 August 6:00PM</p>
-          <p className="sub-event-detail">to <span className="detail-highlight">19 Auguest 1:00PM</span> UTC+10</p>
+          <p className="event-detail">{startDate}</p>
+          <p className="sub-event-detail">to <span className="detail-highlight">{endDate}</span> UTC+10</p>
         </div>
         <div className="arrow-icon">
           <KeyboardArrowRightIcon />
@@ -37,8 +40,8 @@ const EventPage: React.FunctionComponent = () => {
           <LocationOnIcon />
         </div>
         <div className="event-detail-box">
-          <p className="event-detail">18 August 6:00PM</p>
-          <p className="sub-event-detail">to <span className="detail-highlight">19 Auguest 1:00PM</span> UTC+10</p>
+          <p className="event-detail">{location.streetName}</p>
+          <p className="sub-event-detail">{location.suburb}, {location.postcode}, {location.state}</p>
         </div>
         <div className="arrow-icon">
           <KeyboardArrowRightIcon />

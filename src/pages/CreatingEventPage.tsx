@@ -18,9 +18,9 @@ const CreatingEventPage: React.FunctionComponent = () => {
   const [endDate, setEndDate] = useState<Dayjs | null>(
     dayjs(new Date()),
   );
-  const [hostName, setHostName] = useState<string>('');
-  const [eventName, setEventName] = useState<string>('');
-  const [location, setLocation] = useState<ILocation>({});
+  const [hostName, setHostName] = useState<string>('Host Name');
+  const [eventName, setEventName] = useState<string>('Event Name');
+  const [location, setLocation] = useState<ILocation>({streetName: 'streetName', postcode:'postcode', suburb: 'suburb', state: 'state'});
 
   return (
     <div className="create-container">
@@ -79,9 +79,9 @@ const CreatingEventPage: React.FunctionComponent = () => {
         </LocalizationProvider>
         <TextField
           required
-          label="Suburb"
+          label="StreetName"
           className="textField"
-          defaultValue="Suburb"
+          defaultValue="StreetName"
           onChange={(e) => setLocation({...location, streetName: e.target.value})}
         />
         <TextField
@@ -106,7 +106,7 @@ const CreatingEventPage: React.FunctionComponent = () => {
           onChange={(e) => setLocation({...location, state: e.target.value})}
         />
       </Box>
-      <Link to={"/event"} state={{ hostName: hostName, eventName: eventName, location: location }}>
+      <Link to={"/event"} state={{ hostName: hostName, eventName: eventName, location: location, startDate: startDate?.format('DD MMM YYYY HH:mmA'), endDate: endDate?.format('DD MMM YYYY HH:mmA'),}}>
         <Button>Next</Button>
       </Link>
       
