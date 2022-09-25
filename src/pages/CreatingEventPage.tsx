@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   Link,
-  withRouter
 } from 'react-router-dom';
 import './CreatingEventPage/CreatingEventPage.less';
 import { ILocation } from '../types/location';
@@ -107,9 +106,12 @@ const CreatingEventPage: React.FunctionComponent = () => {
           onChange={(e) => setLocation({...location, state: e.target.value})}
         />
       </Box>
-      <Button>Next</Button>
+      <Link to={"/event"} state={{ hostName: hostName, eventName: eventName, location: location }}>
+        <Button>Next</Button>
+      </Link>
+      
     </div>
   )
 };
 
-export default withRouter(CreatingEventPage);
+export default CreatingEventPage;

@@ -1,13 +1,11 @@
 import {
-  Link,
-  withRouter
+  useLocation
 } from 'react-router-dom';
 import birthdayCake from '../image/birthdayCake.png';
 import './EventPage/EventPage.less';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-
 
 const EventPage: React.FunctionComponent = () => {
 
@@ -50,4 +48,4 @@ const EventPage: React.FunctionComponent = () => {
   )
 };
 
-export default withRouter(EventPage);
+export default EventPage;

@@ -1,20 +1,18 @@
 import React from 'react';
 import {
-  Redirect,
   Route,
-  Switch,
-  withRouter
+  Routes,
 } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import CreatingEventPage from './pages/CreatingEventPage'
 import EventPage from './pages/EventPage';
 
 const App = () => (
-  <Switch>
-    <Route component={LandingPage} exact path="/" />
-    <Route component={CreatingEventPage} exact path="/create" />
-    <Route component={EventPage} exact path="/event" />
-  </Switch>
+  <Routes>
+    <Route element={<LandingPage />} path="/" />
+    <Route element={<CreatingEventPage />} path="/create" />
+    <Route element={<EventPage />} path="/event" />
+  </Routes>
 );
 
-export default withRouter(App);
+export default App;

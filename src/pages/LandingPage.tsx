@@ -1,6 +1,5 @@
 import {
   Link,
-  withRouter
 } from 'react-router-dom';
 import { Container } from "semantic-ui-react";
 import './LandingPage/LandingPage.less';
@@ -30,4 +29,4 @@ const LandingPage: React.FunctionComponent = () => {
   )
 };
 
-export default withRouter(LandingPage);
+export default LandingPage;
