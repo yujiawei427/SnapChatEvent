@@ -1,12 +1,14 @@
 import { withRouter } from "react-router";
+import { Container } from "semantic-ui-react";
+import './LandingPage/LandingPage.less';
 
 const LandingPage: React.FunctionComponent = () => {
-
-  console.log('landing')
-
+  
   return (
     <div>
-      abcdefg
+      <p className='header'>Imagine if</p>
+      <p className='highlight'>Snapchat</p>
+      <p>had events.</p>
     </div> 
   )
 };
