@@ -6,10 +6,12 @@ import {
   withRouter
 } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
+import CreatingEventPage from './pages/CreatingEventPage'
 
 const App = () => (
   <Switch>
     <Route component={LandingPage} exact path="/" />
+    <Route sensitive component={CreatingEventPage} exact path="/create" />
   </Switch>
 );
 
